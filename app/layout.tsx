@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"; // 1. Import it here
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "HomeCare Plus | Professional Care at Home",
-  description: "Quality homecare services for your loved ones.",
+  title: "Setna Homecare | Healthcare Consultancy Addis Ababa",
+  description: "Setna Homecare and Healthcare Consultancy - Professional care at home in Bole, Addis Ababa.",
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Navbar />
         {children}
-        <Footer /> {/* 2. Add it here */}
+        <Footer />
       </body>
     </html>
   );
