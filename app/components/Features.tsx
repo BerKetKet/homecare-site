@@ -1,50 +1,60 @@
-export default function Features() {
-  const points = [
+export default function Services() {
+  const services = [
     {
-      title: "Certified Caregivers",
-      description: "Every member of our team undergoes rigorous background checks and specialized training."
+      title: "Nursing Care",
+      desc: "Professional nursing services including medication administration, wound care, vital signs monitoring, and post-surgical care.",
+      icon: ""
     },
     {
-      title: "Custom Care Plans",
-      description: "We don't believe in one-size-fits-all. We create a plan specifically for your loved one."
+      title: "Skilled Nursing",
+      desc: "Professional medical care provided by registered nurses in your home.",
+      icon: "🩺"
     },
     {
-      title: "24/7 Availability",
-      description: "Our dedicated support team is available around the clock for emergencies and questions."
+      title: "Companionship",
+      desc: "Social interaction and emotional support to improve quality of life.",
+      icon: "🤝"
+    },
+    {
+      title: "Respite Care",
+      desc: "Temporary relief for primary caregivers to rest and recharge.",
+      icon: "✨"
+    },
+    {
+      title: "Respite Care",
+      desc: "Temporary relief for primary caregivers to rest and recharge.",
+      icon: "✨"
     }
   ];
 
   return (
-    <section className="py-24 px-8 bg-white">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-        {/* Left Side: Large Text */}
-        <div className="md:w-1/2">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Why Choose HomeCare Plus?
-          </h2>
-          <p className="text-gray-600 text-lg mb-8">
-            We understand that inviting someone into your home is a big decision. 
-            We treat every patient like they are our own family.
-          </p>
-          <button className="text-blue-600 font-bold hover:underline">
-            Learn more about our hiring process &rarr;
-          </button>
+    <section className="py-16 md:py-24 px-6 md:px-8 bg-gray-50 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Services</h2>
+          <p className="text-gray-600 mt-4 text-lg">Professional care tailored to your family's needs.</p>
         </div>
 
-        {/* Right Side: List of Features */}
-        <div className="md:w-1/2 space-y-8">
-          {points.map((point, index) => (
-            <div key={index} className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">
-                {index + 1}
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-800">{point.title}</h3>
-                <p className="text-gray-600">{point.description}</p>
-              </div>
+        {/* Carousel on Mobile, Grid on Desktop */}
+        <div className="flex md:grid md:grid-cols-4 gap-6 overflow-x-auto md:overflow-visible pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide">
+          {services.map((service, index) => (
+            <div 
+              key={index} 
+              className="min-w-[85vw] md:min-w-0 p-8 border border-gray-200 rounded-2xl shadow-sm bg-white snap-center"
+            >
+              <div className="text-4xl mb-4">{service.icon}</div>
+              <h3 className="text-xl font-bold mb-2 text-gray-800">{service.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {service.desc}
+              </p>
             </div>
           ))}
         </div>
+        
+        {/* Mobile Swipe Hint */}
+        <p className="text-center text-gray-400 text-xs mt-2 md:hidden italic">
+          ← Swipe to see more →
+        </p>
       </div>
     </section>
   );
